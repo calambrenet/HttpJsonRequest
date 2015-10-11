@@ -12,7 +12,7 @@ E indicar la contraseña:
 
 USO
 ---
-Hay que indicar el tipo de retorno. En el constructor hay que indicar el contexto de la aplicación, la url de la llamada, el tipo de llamada (POST/GET), un String con la llamada json (opcional) y si es una llamada ssl.
+Hay que indicar el tipo de retorno. En el constructor tenemos como opciones el contexto de la aplicación, la url de la llamada, el tipo de llamada (POST/GET), un String con la llamada json (opcional) y si es una llamada ssl.
 Tenemos dos callbacks: onDone() y onFail().
 Al ejecutar exec() ejecutamos la llamada. 
 Lo ideal es meterla en un asyncTask y llamarlo en otro hilo.
