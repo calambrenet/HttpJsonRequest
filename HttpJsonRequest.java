@@ -110,7 +110,7 @@ public abstract class HttpJsonRequest<Result>{
 
         int statusCode = http_connection.getResponseCode(); 
       
-        if((statusCode < 200) && (statusCode > 300)){
+        if((statusCode < 200) || (statusCode > 300)){
             http_connection.disconnect();
             
             return this.onFail(statusCode);
