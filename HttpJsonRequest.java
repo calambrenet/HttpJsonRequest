@@ -89,8 +89,8 @@ public abstract class HttpJsonRequest<Result>{
             http_connection.setRequestMethod("POST");
 
             DataOutputStream outputStream = new DataOutputStream(http_connection.getOutputStream());
-            JSONObject jsonParam = new JSONObject(jsonData);
-            outputStream.writeBytes(jsonParam.toString());
+            byte[] utf8JsonString = jsonData.getBytes("UTF8");
+            outputStream.write(utf8JsonString);
             outputStream.flush();
             outputStream.close();
         }
