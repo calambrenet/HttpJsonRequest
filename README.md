@@ -17,22 +17,22 @@ Tenemos dos callbacks: onDone() y onFail().
 Al ejecutar exec() ejecutamos la llamada. 
 Lo ideal es meterla en un asyncTask y llamarlo en otro hilo.
 
-    HttpJsonRequest<boolean> post = new HttpJsonRequest<boolean>(activity.getApplicationContext(), URL, HttpJsonRequest.POST, JSON_POST, true) {
+    HttpJsonRequest<type> post = new HttpJsonRequest<type>(activity.getApplicationContext(), URL, HttpJsonRequest.POST, JSON_POST, true) {
     	@Override
-    	public boolean onDone(JSONObject json_response, int status_code) {
+    	public type onDone(JSONObject json_response, int status_code) {
     		// TODO Auto-generated method stub
     		return false;
     	}
     
     	@Override
-    	public boolean onFail(int status_code) {
+    	public type onFail(int status_code) {
     		// TODO Auto-generated method stub
     		return null;
     	}
     };
     	
     try {
-    	boolean result = post.exec();			
+        type = post.exec();			
     } catch (Exception e) {
     	// TODO Auto-generated catch block
     	e.printStackTrace();
